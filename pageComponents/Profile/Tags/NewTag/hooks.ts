@@ -11,7 +11,7 @@ export const useNewTag = ({ closeModal }: NewTag) => {
   const addNotification = useAppNotification(state => state.addNotification);
   const { mutate } = useMutation(createNewTag);
 
-  const { control, handleSubmit, reset, register } = useForm<NewTagValues>({
+  const { control, handleSubmit, register, resetField } = useForm<NewTagValues>({
     defaultValues: {
       title: '',
       addMore: false,
@@ -25,7 +25,7 @@ export const useNewTag = ({ closeModal }: NewTag) => {
       onSuccess: () => {
         addNotification({ message: 'Tag created successfully', type: 'success' });
         queryClient.invalidateQueries('tags');
-        reset();
+        resetField('title');
 
         if (!addMore) {
           closeModal();

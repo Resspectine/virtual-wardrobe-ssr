@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should match snapshot on create garment page 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  padding: 20px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin: 0;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  margin: 0;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #388e3c;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+<div
+    class="MuiBox-root emotion-0"
+  >
+    <div
+      class="MuiBox-root emotion-1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 emotion-2"
+      >
+        Main
+      </p>
+    </div>
+    <div
+      class="MuiBox-root emotion-1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 emotion-4"
+      >
+        Create Garment
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Navigation should match snapshot on edit garment page 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  padding: 20px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin: 0;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  margin: 0;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #388e3c;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+<div
+    class="MuiBox-root emotion-0"
+  >
+    <div
+      class="MuiBox-root emotion-1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 emotion-2"
+      >
+        Main
+      </p>
+    </div>
+    <div
+      class="MuiBox-root emotion-1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 emotion-4"
+      >
+        Create Garment
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Navigation should match snapshot on main page 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  padding: 20px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin: 0;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #388e3c;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  margin: 0;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+<div
+    class="MuiBox-root emotion-0"
+  >
+    <div
+      class="MuiBox-root emotion-1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 emotion-2"
+      >
+        Main
+      </p>
+    </div>
+    <div
+      class="MuiBox-root emotion-1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 emotion-4"
+      >
+        Create Garment
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

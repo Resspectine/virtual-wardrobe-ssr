@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import TagItem from '@/components/TagItem';
+import { render } from '@/testUtils';
 
 describe('TagItem', () => {
   test('should display tag title', () => {

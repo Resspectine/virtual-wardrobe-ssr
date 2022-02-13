@@ -4,11 +4,15 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
-import { FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 
 import { useTagFilter } from './hooks';
 import { TagFilterWrapper } from './styled';
 import { TagFilterProps } from './types';
+
+const selectDisplayProps = {
+  'data-testid': 'tag-filter',
+} as HTMLAttributes<HTMLDivElement>;
 
 const TagFilter: FC<TagFilterProps> = ({ tags, setValue, value }) => {
   const { handleChange } = useTagFilter({
@@ -21,9 +25,9 @@ const TagFilter: FC<TagFilterProps> = ({ tags, setValue, value }) => {
       <InputLabel id="tag-filter-label">Tag</InputLabel>
       <Select
         labelId="tag-filter-label"
-        id="tag-filter"
         multiple
         value={value}
+        SelectDisplayProps={selectDisplayProps}
         onChange={handleChange}
         input={<OutlinedInput label="Tag" />}
         renderValue={(selected): string => selected.map(id => tags.find(tag => tag.id === id)?.title || '').join(', ')}

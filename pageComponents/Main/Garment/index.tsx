@@ -15,16 +15,16 @@ export interface GarmentProps extends Partial<HoldClickProps> {
   toggleFavorite: (id: string) => void;
 }
 
-const Garment: FC<GarmentProps> = ({
+const GarmentComponent: FC<GarmentProps> = ({
   garment: { description, picture, isFavorite, price, title, wearingAmount, id, tags },
   onClick,
   toggleFavorite,
   ...hold
 }) => (
-  <GarmentWrapper onClick={onClick} {...hold}>
+  <GarmentWrapper data-testid="garment" onClick={onClick} {...hold}>
     <StarButton id={id} isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
     <Box>
-      <ImageSection image={picture || null} />
+      {picture && <ImageSection image={picture} />}
       <DataSection description={description} title={title} />
     </Box>
     <Box display="flex" mx={-0.625} flexWrap="wrap" flex="1" alignItems="flex-start">
@@ -36,4 +36,4 @@ const Garment: FC<GarmentProps> = ({
   </GarmentWrapper>
 );
 
-export default Garment;
+export default GarmentComponent;

@@ -1,0 +1,724 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile should match snapshot closed 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  position: absolute;
+  right: 20px;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  text-transform: uppercase;
+  min-width: 64px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: #1976d2;
+  padding: 0;
+  min-width: unset;
+}
+
+.emotion-1::-moz-focus-inner {
+  border-style: none;
+}
+
+.emotion-1.Mui-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media print {
+  .emotion-1 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.emotion-1:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+@media (hover: none) {
+  .emotion-1:hover {
+    background-color: transparent;
+  }
+}
+
+.emotion-1.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  font-family: Montserrat,Times New Roman;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-3 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  object-fit: cover;
+  color: transparent;
+  text-indent: 10000px;
+}
+
+.emotion-4 {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+<div
+    class="MuiBox-root emotion-0"
+    data-testid="user-profile-button"
+  >
+    <button
+      class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root emotion-1"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="MuiAvatar-root MuiAvatar-circular emotion-2"
+      >
+        <img
+          alt="avatar"
+          class="MuiAvatar-img emotion-3"
+          src="data:application/octet-stream;base64,"
+        />
+      </div>
+      <span
+        class="MuiTouchRipple-root emotion-4"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`UserProfile should match snapshot opened 1`] = `
+@keyframes animation-0 {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 0.1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes animation-1 {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation-2 {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.92);
+    -moz-transform: scale(0.92);
+    -ms-transform: scale(0.92);
+    transform: scale(0.92);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.emotion-0 {
+  position: absolute;
+  right: 20px;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  text-transform: uppercase;
+  min-width: 64px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: #1976d2;
+  padding: 0;
+  min-width: unset;
+}
+
+.emotion-1::-moz-focus-inner {
+  border-style: none;
+}
+
+.emotion-1.Mui-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media print {
+  .emotion-1 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.emotion-1:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+@media (hover: none) {
+  .emotion-1:hover {
+    background-color: transparent;
+  }
+}
+
+.emotion-1.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  font-family: Montserrat,Times New Roman;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-3 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  object-fit: cover;
+  color: transparent;
+  text-indent: 10000px;
+}
+
+.emotion-4 {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+.emotion-5 {
+  opacity: 0;
+  position: absolute;
+}
+
+.emotion-5.MuiTouchRipple-rippleVisible {
+  opacity: 0.3;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 550ms;
+  animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emotion-5.MuiTouchRipple-ripplePulsate {
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms;
+}
+
+.emotion-5 .MuiTouchRipple-child {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.emotion-5 .MuiTouchRipple-childLeaving {
+  opacity: 0;
+  -webkit-animation-name: animation-1;
+  animation-name: animation-1;
+  -webkit-animation-duration: 550ms;
+  animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emotion-5 .MuiTouchRipple-childPulsate {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  -webkit-animation-name: animation-2;
+  animation-name: animation-2;
+  -webkit-animation-duration: 2500ms;
+  animation-duration: 2500ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+}
+
+.emotion-6 {
+  position: fixed;
+  z-index: 1300;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+}
+
+.emotion-7 {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  z-index: -1;
+}
+
+.emotion-8 {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+  max-height: calc(100% - 96px);
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  outline: 0;
+}
+
+.emotion-9 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  outline: 0;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  font-family: Montserrat,Times New Roman;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  min-height: 48px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.emotion-10::-moz-focus-inner {
+  border-style: none;
+}
+
+.emotion-10.Mui-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media print {
+  .emotion-10 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.emotion-10:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (hover: none) {
+  .emotion-10:hover {
+    background-color: transparent;
+  }
+}
+
+.emotion-10.Mui-selected {
+  background-color: rgba(25, 118, 210, 0.08);
+}
+
+.emotion-10.Mui-selected.Mui-focusVisible {
+  background-color: rgba(25, 118, 210, 0.2);
+}
+
+.emotion-10.Mui-selected:hover {
+  background-color: rgba(25, 118, 210, 0.12);
+}
+
+@media (hover: none) {
+  .emotion-10.Mui-selected:hover {
+    background-color: rgba(25, 118, 210, 0.08);
+  }
+}
+
+.emotion-10.Mui-focusVisible {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.emotion-10.Mui-disabled {
+  opacity: 0.38;
+}
+
+.emotion-10+.MuiDivider-root {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.emotion-10+.MuiDivider-inset {
+  margin-left: 52px;
+}
+
+.emotion-10 .MuiListItemText-root {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.emotion-10 .MuiListItemText-inset {
+  padding-left: 36px;
+}
+
+.emotion-10 .MuiListItemIcon-root {
+  min-width: 36px;
+}
+
+@media (min-width:600px) {
+  .emotion-10 {
+    min-height: auto;
+  }
+}
+
+<body
+  style="padding-right: 1024px; overflow: hidden;"
+>
+  <div
+    aria-hidden="true"
+  >
+    <div
+      class="MuiBox-root emotion-0"
+      data-testid="user-profile-button"
+    >
+      <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root emotion-1"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="MuiAvatar-root MuiAvatar-circular emotion-2"
+        >
+          <img
+            alt="avatar"
+            class="MuiAvatar-img emotion-3"
+            src="data:application/octet-stream;base64,"
+          />
+        </div>
+        <span
+          class="MuiTouchRipple-root emotion-4"
+        >
+          <span
+            class="emotion-5 MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+            style="width: 2.8284271247461903px; height: 2.8284271247461903px; top: -1.4142135623730951px; left: -1.4142135623730951px;"
+          >
+            <span
+              class="MuiTouchRipple-child MuiTouchRipple-childLeaving"
+            />
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="MuiModal-root MuiPopover-root MuiMenu-root emotion-6"
+    role="presentation"
+  >
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root MuiBackdrop-invisible emotion-7"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    />
+    <div
+      data-test="sentinelStart"
+      tabindex="0"
+    />
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper emotion-8"
+      style="opacity: 1; transform: none; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+      tabindex="-1"
+    >
+      <ul
+        class="MuiList-root MuiList-padding MuiMenu-list emotion-9"
+        role="menu"
+        tabindex="-1"
+      >
+        <li
+          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root emotion-10"
+          role="menuitem"
+          tabindex="0"
+        >
+          Profile
+          <span
+            class="MuiTouchRipple-root emotion-4"
+          />
+        </li>
+        <li
+          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root emotion-10"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Toggle theme
+          <span
+            class="MuiTouchRipple-root emotion-4"
+          />
+        </li>
+        <li
+          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root emotion-10"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Logout
+          <span
+            class="MuiTouchRipple-root emotion-4"
+          />
+        </li>
+      </ul>
+    </div>
+    <div
+      data-test="sentinelEnd"
+      tabindex="0"
+    />
+  </div>
+</body>
+`;

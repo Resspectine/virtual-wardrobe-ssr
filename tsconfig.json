@@ -10,13 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "target": "es6",
-    "lib": [
-      "dom",
-      "es2019",
-      "es2020",
-      "es2021",
-      "esnext"
-    ],
+    "lib": ["dom", "es2019", "es2020", "es2021", "esnext"],
     "strict": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -45,16 +39,10 @@
       "@/styles/*": ["styles/*"],
       "@/materialUiTheme/*": ["materialUiTheme/*"],
       "@/pageComponents/*": ["pageComponents/*"],
-      "@/routes/*": ["routes/*"]
+      "@/routes/*": ["routes/*"],
+      "@/testUtils": ["testUtils"]
     }
   },
-  
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "cypress"]
 }

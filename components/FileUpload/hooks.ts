@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { FileUploadProps } from './types';
 
-import { getDataStringFromFile } from 'lib/helpers/files';
+import { getDataStringFromFile } from '@/lib/helpers/files';
 
 type UseFileUploadControl = Pick<FileUploadProps, 'setValue' | 'name' | 'file' | 'errors'>;
 

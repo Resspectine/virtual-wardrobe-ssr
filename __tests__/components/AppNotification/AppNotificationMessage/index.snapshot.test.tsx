@@ -1,9 +1,9 @@
 /* eslint-disable no-plusplus */
-import { render } from '@testing-library/react';
 
 import { notificationBuilder } from './index.test';
 
 import { AppNotificationMessage } from '@/components/AppNotification/AppNotificationMessage';
+import { render } from '@/testUtils';
 
 beforeEach(() => {
   jest.useFakeTimers();
@@ -13,8 +13,8 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('FormSubmitSection', () => {
-  test('should be success and match snapshot', () => {
+describe('AppNotificationMessage', () => {
+  test('should be error and match snapshot', () => {
     const notification = notificationBuilder({
       overrides: {
         type: 'error',
@@ -27,7 +27,7 @@ describe('FormSubmitSection', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should be success and match snapshot', () => {
+  test('should be loading and match snapshot', () => {
     const notification = notificationBuilder({
       overrides: {
         type: 'loading',
@@ -39,7 +39,7 @@ describe('FormSubmitSection', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should be success and match snapshot', () => {
+  test('should be notification and match snapshot', () => {
     const notification = notificationBuilder({
       overrides: {
         type: 'notification',
@@ -63,7 +63,7 @@ describe('FormSubmitSection', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should be success and match snapshot', () => {
+  test('should be warning and match snapshot', () => {
     const notification = notificationBuilder({
       overrides: {
         type: 'warning',

@@ -8,7 +8,7 @@ const UserProfile: FC = () => {
   const { open, anchorEl, menuItems, handleClick, handleClose, userProfileUrl } = useUserProfile();
 
   return (
-    <UserProfileWrapper>
+    <UserProfileWrapper data-testid="user-profile-button">
       <UserProfileButton onClick={handleClick}>
         <Avatar src={userProfileUrl} alt="avatar" />
       </UserProfileButton>

@@ -13,7 +13,7 @@ const NamePicture: FC = () => {
       <NamePictureLabel>Name: </NamePictureLabel>
       <NamePictureText>{userName}</NamePictureText>
       <NamePictureAvatarWrapper>
-        <NamePictureAvatar src={userProfileUrl || ''} />
+        <NamePictureAvatar src={userProfileUrl} alt="avatar" />
         <Button variant="outlined" component="label">
           Update image
           <input type="file" hidden {...register('profilePicture')} />

@@ -3,10 +3,10 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useDoubleClick } from '../../../lib/hooks/useDoubleClick';
 
-import { sleep } from '@/lib/helpers/testHelpers';
+import { sleep } from '@/testUtils';
 
 describe('useDoubleClick', () => {
-  test('useDoubleClick', async () => {
+  test('should work correctly', async () => {
     let clicks = 0;
     const { result, rerender } = renderHook(
       ({ timeoutCounter }) =>

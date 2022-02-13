@@ -1,6 +1,6 @@
 import TextField from '@mui/material/TextField';
 
-import { filter, isCustomTag, isNoStringsInArray } from './helpers';
+import { filter, isCustomTag } from './helpers';
 import { TagAutocompleteProps } from './types';
 
 import { TagAutocompleteProps as ComponentTagAutocompleteProps } from '.';
@@ -9,10 +9,6 @@ type UseTagAutocomplete = Pick<ComponentTagAutocompleteProps, 'value' | 'setValu
 
 export const useTagAutocomplete = ({ setValue, value }: UseTagAutocomplete) => {
   const onChange: TagAutocompleteProps['onChange'] = (_, newValue) => {
-    if (!isNoStringsInArray(newValue)) {
-      return;
-    }
-
     setValue(newValue);
   };
 

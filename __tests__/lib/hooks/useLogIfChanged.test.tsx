@@ -44,7 +44,7 @@ describe('useLogIfChanged', () => {
     expect(counter).toEqual(3);
   });
 
-  test('useLogIfChanged for obect', async () => {
+  test('useLogIfChanged for object', async () => {
     const testObj = {
       test: false,
     };

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { camelToSentenceCase } from '@/lib/helpers/textTransformations';
 
-describe('Text transformation', () => {
+describe('camelToSentenceCase', () => {
   test('camelToSentenceCase should work correctly', () => {
     expect(camelToSentenceCase('camelCase')).toEqual('Camel Case');
 

@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { sleep } from '@/lib/helpers/testHelpers';
 import { useHoldClick } from '@/lib/hooks/useHoldClick';
+import { sleep } from '@/testUtils';
 
 const event = { persist: () => {} } as React.MouseEvent<HTMLElement, MouseEvent>;
 
 describe('useHoldClick', () => {
-  test('useHoldClick', async () => {
+  test('should work correctly', async () => {
     let clicks = 0;
     const { result, rerender } = renderHook(
       ({ timeoutCounter }) =>

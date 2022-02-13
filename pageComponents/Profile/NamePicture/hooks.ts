@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import { fileFetch } from '@/lib/controller/file';
 import { usePictureLoad } from '@/lib/hooks/usePictureLoad';
+import { placeholderImageUrl } from '@/pageComponents/Root/Navigation/UserProfile/constants';
 import { useUser } from '@/store/user';
 
 export const useNamePicture = () => {
@@ -25,7 +26,7 @@ export const useNamePicture = () => {
 
   return {
     userName: user?.name,
-    userProfileUrl,
+    userProfileUrl: userProfileUrl || placeholderImageUrl,
     register,
   };
 };

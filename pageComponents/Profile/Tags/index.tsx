@@ -7,7 +7,7 @@ import { useTags } from './hooks';
 import { NewTag } from './NewTag';
 import { TagsWrapper } from './styled';
 
-import TagItem from 'components/TagItem';
+import TagItem from '@/components/TagItem';
 
 const Tags: FC = () => {
   const { data, isModalOpened, setIsModalOpened, onDelete } = useTags();
@@ -18,7 +18,12 @@ const Tags: FC = () => {
         <NewTag closeModal={(): void => setIsModalOpened(false)} />
       </Modal>
       <Box>
-        <Button variant="contained" color="primary" onClick={(): void => setIsModalOpened(true)}>
+        <Button
+          data-testid="add-tag-button"
+          variant="contained"
+          color="primary"
+          onClick={(): void => setIsModalOpened(true)}
+        >
           Add new tag
         </Button>
       </Box>

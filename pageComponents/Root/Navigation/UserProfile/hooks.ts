@@ -28,7 +28,7 @@ export const useUserProfile = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setAnchorEl(null);
   };
 
@@ -37,15 +37,25 @@ export const useUserProfile = () => {
   const menuItems = [
     {
       text: 'Profile',
-      onClick: () => router.push(ROUTE_PATHS.profile),
+      onClick: (): void => {
+        handleClose();
+
+        router.push(ROUTE_PATHS.profile);
+      },
     },
     {
       text: 'Toggle theme',
-      onClick: toggleThemeMode,
+      onClick: (): void => {
+        handleClose();
+        toggleThemeMode();
+      },
     },
     {
       text: 'Logout',
-      onClick: () => logOutMutate(),
+      onClick: (): void => {
+        logOutMutate();
+        handleClose();
+      },
     },
   ];
 

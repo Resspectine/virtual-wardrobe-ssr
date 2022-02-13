@@ -22,17 +22,13 @@ export const useHoldClick = <
       if (millisecondsStart.current && Date.now() >= millisecondsStart.current + timeout) {
         callback(...args)(event);
 
-        if (intervalRef.current) {
-          clearInterval(intervalRef.current);
-        }
+        intervalRef.current && clearInterval(intervalRef.current);
       }
     }, 10);
   };
 
   const onMouseUp = (): void => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    intervalRef.current && clearInterval(intervalRef.current);
   };
 
   const hold = (...args: Parameters<T>): HoldClickProps => ({

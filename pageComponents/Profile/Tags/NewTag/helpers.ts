@@ -2,7 +2,7 @@ import { Control } from 'react-hook-form';
 
 import { NewTagValues } from '.';
 
-import { ControlledTextField } from 'components/ControlledTextField';
+import { ControlledTextField } from '@/components/ControlledTextField';
 
 export const getFormFieldConfigurations = (control: Control<NewTagValues>): ControlledTextField<NewTagValues>[] => [
   {

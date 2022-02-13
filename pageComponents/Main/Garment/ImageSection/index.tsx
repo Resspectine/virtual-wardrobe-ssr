@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { useImageSection } from './hooks';
 import { GarmentImage, GarmentImageDivider } from './styled';
 
-import { File as PublicFile } from 'types/file';
+import { File as PublicFile } from '@/types/file';
 
 export interface ImageSectionProps {
   image: PublicFile | null;

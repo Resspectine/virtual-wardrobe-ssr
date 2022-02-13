@@ -1,9 +1,10 @@
 import { build, fake, oneOf, sequence } from '@jackfranklin/test-data-bot';
-import { act, render } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { AppNotification } from '@/components/AppNotification';
 import { useAppNotification } from '@/store/appNotification';
+import { render } from '@/testUtils';
 import { Notification } from '@/types/notification';
 
 export const notificationBuilder = build<Notification>({
@@ -19,7 +20,7 @@ afterEach(() => {
 });
 
 describe('AppNotification', () => {
-  test('should show app notification message', async () => {
+  test('should display notification and then remove', async () => {
     const notification = notificationBuilder();
 
     jest.useFakeTimers();

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom", "es2019", "es2020", "es2021", "esnext"],
+    "types": ["cypress", "@testing-library/cypress", "cypress-file-upload"]
+  },
+  "include": ["**/*.ts", "plugins/index.ts"]
+}

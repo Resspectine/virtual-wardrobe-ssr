@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageSection should match snapshot 1`] = `
+<DocumentFragment>
+  .emotion-1 {
+  width: 100%;
+  height: auto;
+}
+
+<div
+    class="MuiBox-root emotion-0"
+  >
+    <img
+      alt="Something went wrong"
+      class="MuiBox-root emotion-1"
+      src="data:application/octet-stream;base64,"
+    />
+  </div>
+  .emotion-0 {
+  height: 1px;
+  width: 90%;
+  border-radius: 1px;
+  background-color: #e8e8e8;
+  margin: 10px auto;
+}
+
+<div
+    class="MuiBox-root emotion-0"
+  />
+</DocumentFragment>
+`;

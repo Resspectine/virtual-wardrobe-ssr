@@ -12,9 +12,8 @@ export const removeTag = async (tagId: string): Promise<Tag[]> =>
     method: 'DELETE',
   });
 
-export const createNewTag = async (tag: Omit<Tag, 'id'>): Promise<void> => {
+export const createNewTag = async (tag: Omit<Tag, 'id'>): Promise<void> =>
   appFetch('tag', {
     method: 'POST',
     body: tag,
   });
-};

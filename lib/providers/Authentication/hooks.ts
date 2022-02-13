@@ -24,7 +24,7 @@ export const useAuthentication = () => {
   }, [data, error]);
 
   useEffect(() => {
-    if (user === null) {
+    if (user === null && router.route !== ROUTE_PATHS.register) {
       router.push(ROUTE_PATHS.login);
     }
   }, [user]);

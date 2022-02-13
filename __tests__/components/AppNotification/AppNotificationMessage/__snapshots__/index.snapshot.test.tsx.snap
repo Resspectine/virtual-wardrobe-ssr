@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormSubmitSection should be success and match snapshot 1`] = `
+exports[`AppNotificationMessage should be error and match snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
   display: -webkit-box;
@@ -95,7 +95,7 @@ exports[`FormSubmitSection should be success and match snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormSubmitSection should be success and match snapshot 2`] = `
+exports[`AppNotificationMessage should be loading and match snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
   display: -webkit-box;
@@ -192,7 +192,7 @@ exports[`FormSubmitSection should be success and match snapshot 2`] = `
 </DocumentFragment>
 `;
 
-exports[`FormSubmitSection should be success and match snapshot 3`] = `
+exports[`AppNotificationMessage should be notification and match snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
   display: -webkit-box;
@@ -287,7 +287,7 @@ exports[`FormSubmitSection should be success and match snapshot 3`] = `
 </DocumentFragment>
 `;
 
-exports[`FormSubmitSection should be success and match snapshot 4`] = `
+exports[`AppNotificationMessage should be success and match snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
   display: -webkit-box;
@@ -382,7 +382,7 @@ exports[`FormSubmitSection should be success and match snapshot 4`] = `
 </DocumentFragment>
 `;
 
-exports[`FormSubmitSection should be success and match snapshot 5`] = `
+exports[`AppNotificationMessage should be warning and match snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
   display: -webkit-box;

@@ -6,4 +6,4 @@ export type CustomTag = { inputValue: string } & Omit<Tag, 'id'>;
 
 export type AnyTag = Tag | CustomTag;
 
-export type TagAutocompleteProps = AutocompleteProps<AnyTag, true, undefined, true>;
+export type TagAutocompleteProps = AutocompleteProps<AnyTag, true, undefined, false>;

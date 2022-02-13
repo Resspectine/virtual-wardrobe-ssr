@@ -8,13 +8,9 @@ export const useAppNotificationMessage = ({ notification, onRemove }: AppNotific
   const [isRemoving, setRemoving] = useState(false);
 
   const clearRefs = useCallback(() => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
+    timerRef.current && clearTimeout(timerRef.current);
 
-    if (animationRef.current) {
-      clearTimeout(animationRef.current);
-    }
+    animationRef.current && clearTimeout(animationRef.current);
   }, []);
 
   useEffect(() => {

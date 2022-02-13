@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/system';
 
-import ControlledTextField, { ControlledTextFieldType } from 'components/ControlledTextField';
+import TextField, { ControlledTextFieldType } from '@/components/ControlledTextField';
 
 export const NewTagWrapper = styled(Box)(({ theme }) => ({
   position: 'absolute',
@@ -26,7 +26,7 @@ export const NewTagActionsWrapper = styled(Box)({
   display: 'flex',
 });
 
-export const NewTagTextField = styled(ControlledTextField)({
+export const NewTagTextField = styled(TextField)({
   '&.MuiTextField-root': {
     marginBottom: 1.25,
     width: '100%',

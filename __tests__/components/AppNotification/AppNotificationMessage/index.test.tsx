@@ -1,9 +1,9 @@
 import { build, fake, oneOf, sequence } from '@jackfranklin/test-data-bot';
-import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
 
 import { AppNotificationMessage } from '@/components/AppNotification/AppNotificationMessage';
+import { render } from '@/testUtils';
 import { Notification } from '@/types/notification';
 
 export const notificationBuilder = build<Notification>({
