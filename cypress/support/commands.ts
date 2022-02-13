@@ -1,22 +1,23 @@
 import { garmentBuilder, tagBuilder, userBuilder } from './builders';
+import { Tag, User } from './index';
 
 Cypress.Commands.add('register', () => {
   const user = userBuilder();
 
   cy.request({
-    url: 'http://localhost:3030/api/authentication/register',
+    url: `${Cypress.env('apiUrl')}/authentication/register`,
     body: user,
     method: 'POST',
   });
 
   cy.visit('/login');
 
-  return cy.wrap(user);
+  return cy.wrap<User>(user);
 });
 
 Cypress.Commands.add('login', user => {
   cy.request({
-    url: 'http://localhost:3030/api/authentication/log-in',
+    url: `${Cypress.env('apiUrl')}/authentication/log-in`,
     body: user,
     method: 'POST',
   });
@@ -36,12 +37,12 @@ Cypress.Commands.add('createTag', () => {
   const tag = tagBuilder();
 
   cy.request({
-    url: 'http://localhost:3030/api/tag',
+    url: `${Cypress.env('apiUrl')}/tag`,
     body: tag,
     method: 'POST',
   });
 
-  return cy.wrap(tag);
+  return cy.wrap<Tag>(tag);
 });
 
 Cypress.Commands.add('createGarmentAndRedirectTo', (redirectTo, addMore) => {

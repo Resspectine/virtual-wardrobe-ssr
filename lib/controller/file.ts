@@ -3,7 +3,7 @@ export const fileFetch: (file: Blob, url?: string) => Promise<Response> = async 
 
   formData.append('file', file);
 
-  const request = await fetch(`http://localhost:3030/api/${url}`, {
+  const request = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/${url}`, {
     method: 'POST',
     body: formData,
     credentials: 'include',

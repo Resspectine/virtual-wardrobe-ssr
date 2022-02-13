@@ -7,7 +7,7 @@ export const appFetch: (
 
   headers.append('Content-Type', 'application/json');
 
-  const request = await fetch(`http://localhost:3030/api/${input}`, {
+  const request = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/${input}`, {
     ...init,
     body: JSON.stringify(init?.body || undefined),
     headers,
