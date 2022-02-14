@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { loadGarments, removeGarment, triggerFavorite, wearGarment } from '@/lib/controller/garment';
 import { loadTags } from '@/lib/controller/tag';
 import { useDoubleClick } from '@/lib/hooks/useDoubleClick';
-import { useHoldClick } from 'lib/hooks/useHoldClick';
+import { isTouchEvent, useHoldClick } from 'lib/hooks/useHoldClick';
 import { ROUTE_PATHS } from 'routes/constants';
 import { useAppNotification } from 'store/appNotification';
 import { Garment } from 'types/garment';
@@ -98,8 +98,8 @@ export const useMain = () => {
     (garmentId: string) =>
       (event): void => {
         setAnchorPosition({
-          left: event.clientX,
-          top: event.clientY,
+          left: isTouchEvent(event) ? event.touches[0].clientX : event.clientX,
+          top: isTouchEvent(event) ? event.touches[0].clientY : event.clientY,
         });
         setIsOpened(true);
         setActiveGarmentId(garmentId);
@@ -114,6 +114,14 @@ export const useMain = () => {
       message: 'Loading garments',
       type: 'loading',
     });
+
+    const preventDefault = (e: MouseEvent) => e.preventDefault();
+
+    window.addEventListener('contextmenu', preventDefault);
+
+    return () => {
+      window.removeEventListener('contextmenu', preventDefault);
+    };
   }, []);
 
   return {

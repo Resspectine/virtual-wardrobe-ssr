@@ -34,7 +34,11 @@ const Main: FC = () => {
       </MainListFilterWrapper>
       <MainWrapper>
         <Popover anchorReference="anchorPosition" anchorPosition={anchorPosition} open={isOpened}>
-          <ClickAwayListener onClickAway={(): void => setIsOpened(false)} mouseEvent="onMouseDown">
+          <ClickAwayListener
+            onClickAway={(): void => setIsOpened(false)}
+            touchEvent="onTouchStart"
+            mouseEvent="onMouseDown"
+          >
             <Box p={0.625}>
               {popoverList.map((listItem, index) => (
                 <MainListItem key={index} {...listItem} />

@@ -25,8 +25,32 @@ export const useCreateClothes = () => {
   const id = router.query.id as string;
   const addNotification = useAppNotification(state => state.addNotification);
   const { data: tags } = useQuery('tags', loadTags);
-  const { mutate: editGarmentMutate } = useMutation<void, Error, Partial<UpdateRequestGarment>, unknown>(editGarment);
-  const { mutate: createGarmentMutate } = useMutation<void, Error, CreateRequestGarment, unknown>(createGarment);
+  const { mutate: editGarmentMutate, isLoading: editGarmentIsLoading } = useMutation<
+    void,
+    Error,
+    Partial<UpdateRequestGarment>,
+    unknown
+  >(editGarment, {
+    onMutate: () => {
+      addNotification({
+        message: 'Editing garment',
+        type: 'notification',
+      });
+    },
+  });
+  const { mutate: createGarmentMutate, isLoading: createGarmentIsLoading } = useMutation<
+    void,
+    Error,
+    CreateRequestGarment,
+    unknown
+  >(createGarment, {
+    onMutate: () => {
+      addNotification({
+        message: 'Creating garment',
+        type: 'notification',
+      });
+    },
+  });
   const { data } = useQuery(['garments', id], () => getGarmentById(id));
   const [autocompleteValue, setAutocompleteValue] = useState<AnyTag[]>([]);
 
@@ -121,7 +145,7 @@ export const useCreateClothes = () => {
     watch,
     errors,
     control,
-    isValid,
+    isValid: isValid && !(editGarmentIsLoading || createGarmentIsLoading),
     onSubmit,
     register,
     setValue,
