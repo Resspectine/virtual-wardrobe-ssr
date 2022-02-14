@@ -6,9 +6,9 @@ import { useAuthentication } from './hooks';
 import { Loading } from '@/components/Loading';
 
 export const AuthenticationProvider: FC = ({ children }) => {
-  const { isLoading } = useAuthentication();
+  const { isLoading, isUnauthorizedPage } = useAuthentication();
 
-  if (!children || isLoading) {
+  if ((!children || isLoading) && !isUnauthorizedPage) {
     return <Loading />;
   }
 

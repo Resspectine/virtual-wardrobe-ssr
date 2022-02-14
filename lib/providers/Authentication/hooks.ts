@@ -29,5 +29,7 @@ export const useAuthentication = () => {
     }
   }, [user]);
 
-  return { isLoading: user === undefined };
+  const isUnauthorizedPage = router.route === ROUTE_PATHS.login || router.route === ROUTE_PATHS.register;
+
+  return { isLoading: user === undefined, isUnauthorizedPage };
 };
