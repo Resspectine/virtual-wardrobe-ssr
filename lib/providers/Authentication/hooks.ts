@@ -24,10 +24,10 @@ export const useAuthentication = () => {
   }, [data, error]);
 
   useEffect(() => {
-    if (error && router.route !== ROUTE_PATHS.register) {
+    if (user === null && error && router.route !== ROUTE_PATHS.register) {
       router.push(ROUTE_PATHS.login);
     }
-  }, [error, router.route]);
+  }, [user, error, router.route]);
 
   const isUnauthorizedPage = router.route === ROUTE_PATHS.login || router.route === ROUTE_PATHS.register;
 
