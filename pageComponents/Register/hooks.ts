@@ -14,7 +14,7 @@ export type RegisterValue = RegisterUser & {
 export const useRegister = () => {
   const router = useRouter();
   const addNotification = useAppNotification(state => state.addNotification);
-  const { mutate } = useMutation<void, Error, RegisterValue>(register);
+  const { mutate: registerMutate } = useMutation<void, Error, RegisterValue>(register);
 
   const {
     control,
@@ -28,7 +28,7 @@ export const useRegister = () => {
   });
 
   const onSubmit = handleSubmit(values => {
-    mutate(values, {
+    registerMutate(values, {
       onSuccess: () => {
         addNotification({ message: 'Register success', type: 'success' });
         router.push(ROUTE_PATHS.login);

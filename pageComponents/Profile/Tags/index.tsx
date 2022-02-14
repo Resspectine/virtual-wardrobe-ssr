@@ -10,7 +10,7 @@ import { TagsWrapper } from './styled';
 import TagItem from '@/components/TagItem';
 
 const Tags: FC = () => {
-  const { data, isModalOpened, setIsModalOpened, onDelete } = useTags();
+  const { loadTagsData, isModalOpened, setIsModalOpened, onDelete } = useTags();
 
   return (
     <Box>

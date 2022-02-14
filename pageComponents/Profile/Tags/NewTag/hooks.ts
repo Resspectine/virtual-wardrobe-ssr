@@ -9,7 +9,7 @@ import { useAppNotification } from '@/store/appNotification';
 export const useNewTag = ({ closeModal }: NewTag) => {
   const queryClient = useQueryClient();
   const addNotification = useAppNotification(state => state.addNotification);
-  const { mutate } = useMutation(createNewTag);
+  const { mutate: createNewTagMutate } = useMutation(createNewTag);
 
   const { control, handleSubmit, register, resetField } = useForm<NewTagValues>({
     defaultValues: {
@@ -21,7 +21,7 @@ export const useNewTag = ({ closeModal }: NewTag) => {
   const onSubmit = handleSubmit(values => {
     const { addMore, ...restValues } = values;
 
-    mutate(restValues, {
+    createNewTagMutate(restValues, {
       onSuccess: () => {
         addNotification({ message: 'Tag created successfully', type: 'success' });
         queryClient.invalidateQueries('tags');

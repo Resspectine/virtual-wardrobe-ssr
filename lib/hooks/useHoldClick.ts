@@ -22,7 +22,12 @@ export const useHoldClick = <
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const millisecondsStart = useRef<number | null>(null);
 
-  const onMouseDown = (event: React.MouseEvent<HTMLElement, MouseEvent>, ...args: never[]): void => {
+  const clearIntervalFromRef = () => intervalRef.current && clearInterval(intervalRef.current);
+
+  const onMouseDown = (
+    event: React.MouseEvent<HTMLElement, MouseEvent> | TouchEvent<HTMLDivElement>,
+    ...args: never[]
+  ): void => {
     event.persist();
     millisecondsStart.current = Date.now();
 
@@ -30,37 +35,20 @@ export const useHoldClick = <
       if (millisecondsStart.current && Date.now() >= millisecondsStart.current + timeout) {
         callback(...args)(event);
 
-        intervalRef.current && clearInterval(intervalRef.current);
+        clearIntervalFromRef();
       }
     }, 10);
   };
 
   const onMouseUp = (): void => {
-    intervalRef.current && clearInterval(intervalRef.current);
-  };
-
-  const onTouchStart = (event: TouchEvent<HTMLDivElement>, ...args: never[]): void => {
-    event.persist();
-    millisecondsStart.current = Date.now();
-
-    intervalRef.current = setInterval(() => {
-      if (millisecondsStart.current && Date.now() >= millisecondsStart.current + timeout) {
-        callback(...args)(event);
-
-        intervalRef.current && clearInterval(intervalRef.current);
-      }
-    }, 10);
-  };
-
-  const onTouchEnd = (): void => {
-    intervalRef.current && clearInterval(intervalRef.current);
+    clearIntervalFromRef();
   };
 
   const hold = (...args: Parameters<T>): HoldClickProps => ({
     onMouseUp,
     onMouseDown: (event): void => onMouseDown(event, ...args),
-    onTouchStart: (event): void => onTouchStart(event, ...args),
-    onTouchEnd,
+    onTouchStart: (event): void => onMouseDown(event, ...args),
+    onTouchEnd: onMouseUp,
   });
 
   return hold;

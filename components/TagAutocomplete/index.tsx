@@ -29,7 +29,6 @@ const TagAutocomplete: FC<TagAutocompleteProps> = ({ autocompleteOptions, setVal
       options={autocompleteOptions}
       getOptionLabel={getOptionLabel}
       renderOption={renderOption}
-      // clearOnBlur
       renderInput={renderInput}
     />
   );

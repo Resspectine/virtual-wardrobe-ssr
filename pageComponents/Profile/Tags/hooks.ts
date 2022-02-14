@@ -6,19 +6,19 @@ import { loadTags, removeTag } from '@/lib/controller/tag';
 export const useTags = () => {
   const queryClient = useQueryClient();
   const [isModalOpened, setIsModalOpened] = useState(false);
-  const { data } = useQuery('tags', loadTags);
-  const { mutate } = useMutation(removeTag);
+  const { data: loadTagsData } = useQuery('tags', loadTags);
+  const { mutate: removeTagMutate } = useMutation(removeTag);
 
   const onDelete = (id: string) => () =>
-    mutate(id, {
+    removeTagMutate(id, {
       onSuccess: () => {
         queryClient.invalidateQueries('tags');
       },
     });
 
   return {
-    data,
     onDelete,
+    loadTagsData,
     isModalOpened,
     setIsModalOpened,
   };

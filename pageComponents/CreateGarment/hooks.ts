@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MutateOptions, useMutation, useQuery } from 'react-query';
 
-import { createGarment, CreateRequestGarment, editGarment, getGarmentById, UpdateRequestGarment } from './mock';
 import { CreateGarmentValues } from './types';
 
 import { isCustomTag } from '@/components/TagAutocomplete/helpers';
 import { AnyTag } from '@/components/TagAutocomplete/types';
 import { fileFetch } from '@/lib/controller/file';
+import { createGarment, editGarment, getGarmentById } from '@/lib/controller/garment';
+import { CreateRequestGarment, UpdateRequestGarment } from '@/lib/controller/garment/types';
 import { loadTags } from '@/lib/controller/tag';
 import { getFileFromStream } from '@/lib/helpers/files';
 import { ROUTE_PATHS } from '@/routes/constants';
@@ -20,7 +21,7 @@ interface SendGarment {
   file?: PictureFile;
 }
 
-export const useCreateClothes = () => {
+export const useCreateGarment = () => {
   const router = useRouter();
   const id = router.query.id as string;
   const addNotification = useAppNotification(state => state.addNotification);
@@ -51,7 +52,7 @@ export const useCreateClothes = () => {
       });
     },
   });
-  const { data } = useQuery(['garments', id], () => getGarmentById(id));
+  const { data: garmentsData } = useQuery(['garments', id], () => getGarmentById(id));
   const [autocompleteValue, setAutocompleteValue] = useState<AnyTag[]>([]);
 
   const {
@@ -73,39 +74,39 @@ export const useCreateClothes = () => {
 
   useEffect(() => {
     const setPicture = async (): Promise<void> => {
-      if (data?.picture) {
-        const file = await getFileFromStream(data.picture, data.picture.filename);
+      if (garmentsData?.picture) {
+        const file = await getFileFromStream(garmentsData.picture, garmentsData.picture.filename);
         setValue('image', [file]);
       }
     };
 
-    if (data) {
-      setValue('description', data.description);
-      setValue('price', data.price);
-      setValue('title', data.title);
+    if (garmentsData) {
+      setValue('description', garmentsData.description);
+      setValue('price', garmentsData.price);
+      setValue('title', garmentsData.title);
 
-      if (data.tags) {
-        setAutocompleteValue(data.tags);
+      if (garmentsData.tags) {
+        setAutocompleteValue(garmentsData.tags);
       }
 
       setPicture();
     }
-  }, [data]);
+  }, [garmentsData]);
 
   const mutateGarment = (
     values: CreateRequestGarment & Partial<UpdateRequestGarment>,
     options: MutateOptions<void, Error, CreateRequestGarment, unknown> &
       MutateOptions<void, Error, Partial<UpdateRequestGarment>, unknown>
-  ): void => (!data ? createGarmentMutate(values, options) : editGarmentMutate(values, options));
+  ): void => (!garmentsData ? createGarmentMutate(values, options) : editGarmentMutate(values, options));
 
   const sendGarment = ({ values: { image: _, ...values }, file }: SendGarment): void => {
     mutateGarment(
       {
         ...values,
-        id: data?.id,
-        picture: file || data?.picture,
-        isFavorite: data?.isFavorite || false,
-        wearingAmount: data?.wearingAmount || 0,
+        id: garmentsData?.id,
+        picture: file || garmentsData?.picture,
+        isFavorite: garmentsData?.isFavorite || false,
+        wearingAmount: garmentsData?.wearingAmount || 0,
         tags: autocompleteValue.map(tag =>
           isCustomTag(tag)
             ? {
@@ -124,7 +125,7 @@ export const useCreateClothes = () => {
   };
 
   const onSubmit = handleSubmit(async values => {
-    if (watch('image')[0].name === data?.picture?.filename) {
+    if (watch('image')[0].name === garmentsData?.picture?.filename) {
       sendGarment({
         values,
       });

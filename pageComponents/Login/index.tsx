@@ -4,13 +4,13 @@ import Typography from '@mui/material/Typography';
 import { FC } from 'react';
 
 import { getFormFieldConfigurations } from './helpers';
-import { useCreateClothes } from './hooks';
+import { useLogin } from './hooks';
 import { LoginForm, LoginLink, LoginNavigation, LoginSubmit, LoginTextField } from './styled';
 
 import { ROUTE_PATHS } from '@/routes/constants';
 
 const Login: FC = () => {
-  const { control, onSubmit, isValid } = useCreateClothes();
+  const { control, onSubmit, isValid } = useLogin();
 
   return (
     <Box>

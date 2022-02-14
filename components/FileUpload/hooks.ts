@@ -22,5 +22,10 @@ export const useFileUploadControl = ({ setValue, name, file, errors }: UseFileUp
 
   const error = errors?.[name];
 
-  return { fileUrl, onCloseCLick, error };
+  return {
+    fileUrl,
+    onCloseCLick,
+    errorMessage:
+      error && (Array.isArray(error) ? error.map(errorMessage => errorMessage?.message).join(', ') : error.message),
+  };
 };

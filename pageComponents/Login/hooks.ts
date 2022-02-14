@@ -10,11 +10,11 @@ import { useUser } from '@/store/user';
 
 export type LoginValue = LoginUser;
 
-export const useCreateClothes = () => {
+export const useLogin = () => {
   const router = useRouter();
   const setUser = useUser(state => state.setUser);
   const addNotification = useAppNotification(state => state.addNotification);
-  const { mutate } = useMutation(login);
+  const { mutate: loginMutate } = useMutation(login);
 
   const {
     control,
@@ -27,7 +27,7 @@ export const useCreateClothes = () => {
   });
 
   const onSubmit = handleSubmit(values => {
-    mutate(values, {
+    loginMutate(values, {
       onSuccess: user => {
         setUser(user);
 

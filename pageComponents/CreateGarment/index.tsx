@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { FC } from 'react';
 
 import { getFormFieldConfigurations } from './helpers';
-import { useCreateClothes } from './hooks';
+import { useCreateGarment } from './hooks';
 import { CreateGarmentForm, CreateGarmentSubmit, CreateGarmentTextField } from './styled';
 
 import FileUpload from '@/components/FileUpload';
@@ -21,7 +21,7 @@ const CreateGarment: FC = () => {
     setValue,
     autocompleteValue,
     setAutocompleteValue,
-  } = useCreateClothes();
+  } = useCreateGarment();
 
   return (
     <Box>

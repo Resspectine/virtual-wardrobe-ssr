@@ -9,7 +9,7 @@ import { CloseIcon, Image } from './styled';
 import { FileUploadProps } from './types';
 
 const FileUpload: FC<FileUploadProps> = ({ register, name, file, setValue, disabled, errors }) => {
-  const { fileUrl, onCloseCLick, error } = useFileUploadControl({
+  const { fileUrl, onCloseCLick, errorMessage } = useFileUploadControl({
     file,
     name,
     setValue,
@@ -35,11 +35,7 @@ const FileUpload: FC<FileUploadProps> = ({ register, name, file, setValue, disab
           })}
         />
       </Button>
-      {error && (
-        <FormHelperText error>
-          {Array.isArray(error) ? error.map(errorMessage => errorMessage?.message).join(', ') : error.message}
-        </FormHelperText>
-      )}
+      {errorMessage && <FormHelperText error>{errorMessage}</FormHelperText>}
     </>
   );
 };

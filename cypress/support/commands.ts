@@ -36,20 +36,23 @@ Cypress.Commands.add('loginAsNewUser', () => {
 Cypress.Commands.add('createTag', () => {
   const tag = tagBuilder();
 
-  cy.request({
-    url: `${Cypress.env('apiUrl')}/tag`,
-    body: tag,
-    method: 'POST',
-  });
-
-  return cy.wrap<Tag>(tag);
+  return cy.getCookie('Authentication').then(cookie =>
+    cy
+      .request({
+        url: `${Cypress.env('apiUrl')}/tag`,
+        body: tag,
+        method: 'POST',
+        headers: {
+          Cookie: `${cookie.name}=${cookie.value}`,
+        },
+      })
+      .then(() => cy.wrap<Tag>(tag))
+  );
 });
 
 Cypress.Commands.add('createGarmentAndRedirectTo', (redirectTo, addMore) => {
   const garment = garmentBuilder();
   cy.visit('create/garment');
-
-  console.log(garment);
 
   cy.findByLabelText(/title/i).type(garment.title);
   cy.findByLabelText(/description/i).type(garment.description);

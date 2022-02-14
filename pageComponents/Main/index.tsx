@@ -1,12 +1,9 @@
-import Box from '@mui/material/Box';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Popover from '@mui/material/Popover';
 import { FC } from 'react';
 
-import { FavoriteFirst } from './Components';
+import { FavoriteFirst, MainListPopover } from './Components';
 import Garment from './Garment';
 import { useMain } from './hooks';
-import { MainListFilterWrapper, MainListItem, MainWrapper } from './styled';
+import { MainListFilterWrapper, MainWrapper } from './styled';
 import TagFilter from './TagFilter';
 
 const Main: FC = () => {
@@ -33,19 +30,12 @@ const Main: FC = () => {
         <FavoriteFirst setValue={setFavoriteFirst} value={isFavoriteFirst} />
       </MainListFilterWrapper>
       <MainWrapper>
-        <Popover anchorReference="anchorPosition" anchorPosition={anchorPosition} open={isOpened}>
-          <ClickAwayListener
-            onClickAway={(): void => setIsOpened(false)}
-            touchEvent="onTouchStart"
-            mouseEvent="onMouseDown"
-          >
-            <Box p={0.625}>
-              {popoverList.map((listItem, index) => (
-                <MainListItem key={index} {...listItem} />
-              ))}
-            </Box>
-          </ClickAwayListener>
-        </Popover>
+        <MainListPopover
+          anchorPosition={anchorPosition}
+          isOpened={isOpened}
+          popoverList={popoverList}
+          setIsOpened={setIsOpened}
+        />
         {garmentsData?.map(garment => (
           <Garment
             key={garment.id}

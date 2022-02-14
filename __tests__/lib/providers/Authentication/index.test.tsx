@@ -3,6 +3,7 @@ import { NextRouter, useRouter } from 'next/router';
 
 import { appFetch } from '@/lib/controller';
 import { AuthenticationProvider } from '@/lib/providers/Authentication';
+import { ROUTE_PATHS } from '@/routes/constants';
 import { render } from '@/testUtils';
 
 jest.mock('@/lib/controller');
@@ -13,6 +14,7 @@ const mockedUseRouter = useRouter as jest.Mock<ReturnType<typeof useRouter>>;
 
 afterEach(() => {
   mockedAppFetch.mockRestore();
+  mockedUseRouter.mockRestore();
 });
 
 describe('Authentication', () => {
@@ -21,6 +23,7 @@ describe('Authentication', () => {
     mockedAppFetch.mockRejectedValue('failed');
     mockedUseRouter.mockReturnValue({
       push,
+      route: ROUTE_PATHS.main,
     } as unknown as NextRouter);
     render(
       <AuthenticationProvider>
