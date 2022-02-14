@@ -28,7 +28,7 @@ const Tags: FC = () => {
         </Button>
       </Box>
       <TagsWrapper>
-        {data?.map(tag => (
+        {loadTagsData?.map(tag => (
           <TagItem tag={tag} key={tag.id} onDelete={onDelete} />
         ))}
       </TagsWrapper>
