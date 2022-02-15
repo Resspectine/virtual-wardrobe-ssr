@@ -5,6 +5,7 @@ export interface HoldClickProps {
   onMouseDown: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   onTouchStart: React.TouchEventHandler<HTMLDivElement>;
   onTouchEnd: () => void;
+  onTouchMove: () => void;
 }
 
 export const isTouchEvent = (
@@ -49,6 +50,7 @@ export const useHoldClick = <
     onMouseDown: (event): void => onMouseDown(event, ...args),
     onTouchStart: (event): void => onMouseDown(event, ...args),
     onTouchEnd: onMouseUp,
+    onTouchMove: onMouseUp,
   });
 
   return hold;
