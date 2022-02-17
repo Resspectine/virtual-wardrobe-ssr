@@ -128,6 +128,7 @@ export const useMain = () => {
     window.addEventListener('contextmenu', preventDefault);
 
     return () => {
+      deleteNotificationByKey('garment loading');
       window.removeEventListener('contextmenu', preventDefault);
     };
   }, []);
