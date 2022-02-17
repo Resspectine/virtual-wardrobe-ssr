@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { MutateOptions, useMutation, useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 
 import { CreateGarmentValues } from './types';
 
@@ -25,6 +25,7 @@ export const useCreateGarment = () => {
   const router = useRouter();
   const id = router.query.id as string;
   const addNotification = useAppNotification(state => state.addNotification);
+  const deleteNotificationByKey = useAppNotification(state => state.deleteNotificationByKey);
   const { data: tags } = useQuery('tags', loadTags);
   const { mutate: editGarmentMutate, isLoading: editGarmentIsLoading } = useMutation<
     void,
@@ -36,7 +37,17 @@ export const useCreateGarment = () => {
       addNotification({
         message: 'Editing garment',
         type: 'notification',
+        key: 'garment editing',
       });
+    },
+    onError: error => {
+      deleteNotificationByKey('garment editing');
+      addNotification({ message: error.message, type: 'error' });
+    },
+    onSuccess: () => {
+      deleteNotificationByKey('garment editing');
+      addNotification({ message: 'Garment edited successfully', type: 'success' });
+      router.push(ROUTE_PATHS.main);
     },
   });
   const { mutate: createGarmentMutate, isLoading: createGarmentIsLoading } = useMutation<
@@ -49,7 +60,17 @@ export const useCreateGarment = () => {
       addNotification({
         message: 'Creating garment',
         type: 'notification',
+        key: 'garment creation',
       });
+    },
+    onError: error => {
+      deleteNotificationByKey('garment creation');
+      addNotification({ message: error.message, type: 'error' });
+    },
+    onSuccess: () => {
+      deleteNotificationByKey('garment creation');
+      addNotification({ message: 'Garment created successfully', type: 'success' });
+      router.push(ROUTE_PATHS.main);
     },
   });
   const { data: garmentsData } = useQuery(['garments', id], () => getGarmentById(id));
@@ -93,35 +114,24 @@ export const useCreateGarment = () => {
     }
   }, [garmentsData]);
 
-  const mutateGarment = (
-    values: CreateRequestGarment & Partial<UpdateRequestGarment>,
-    options: MutateOptions<void, Error, CreateRequestGarment, unknown> &
-      MutateOptions<void, Error, Partial<UpdateRequestGarment>, unknown>
-  ): void => (!garmentsData ? createGarmentMutate(values, options) : editGarmentMutate(values, options));
+  const mutateGarment = (values: CreateRequestGarment & Partial<UpdateRequestGarment>): void =>
+    !garmentsData ? createGarmentMutate(values) : editGarmentMutate(values);
 
   const sendGarment = ({ values: { image: _, ...values }, file }: SendGarment): void => {
-    mutateGarment(
-      {
-        ...values,
-        id: garmentsData?.id,
-        picture: file || garmentsData?.picture,
-        isFavorite: garmentsData?.isFavorite || false,
-        wearingAmount: garmentsData?.wearingAmount || 0,
-        tags: autocompleteValue.map(tag =>
-          isCustomTag(tag)
-            ? {
-                title: tag.inputValue,
-              }
-            : tag
-        ),
-      },
-      {
-        onSuccess: () => {
-          addNotification({ message: 'Garment created successfully', type: 'success' });
-          router.push(ROUTE_PATHS.main);
-        },
-      }
-    );
+    mutateGarment({
+      ...values,
+      id: garmentsData?.id,
+      picture: file || garmentsData?.picture,
+      isFavorite: garmentsData?.isFavorite || false,
+      wearingAmount: garmentsData?.wearingAmount || 0,
+      tags: autocompleteValue.map(tag =>
+        isCustomTag(tag)
+          ? {
+              title: tag.inputValue,
+            }
+          : tag
+      ),
+    });
   };
 
   const onSubmit = handleSubmit(async values => {

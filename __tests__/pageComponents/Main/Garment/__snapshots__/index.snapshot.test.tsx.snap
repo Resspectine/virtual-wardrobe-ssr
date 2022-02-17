@@ -234,16 +234,16 @@ exports[`Garment should match snapshot favorite state 1`] = `
           class="MuiTypography-root MuiTypography-body1 emotion-6"
         />
       </div>
-    </div>
-    <div
-      class="MuiBox-root emotion-7"
-    >
       <div
-        class="MuiBox-root emotion-8"
+        class="MuiBox-root emotion-7"
       >
-        <p
-          class="MuiTypography-root MuiTypography-body1 emotion-9"
-        />
+        <div
+          class="MuiBox-root emotion-8"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 emotion-9"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -511,16 +511,16 @@ exports[`Garment should match snapshot not favorite state 1`] = `
           class="MuiTypography-root MuiTypography-body1 emotion-6"
         />
       </div>
-    </div>
-    <div
-      class="MuiBox-root emotion-7"
-    >
       <div
-        class="MuiBox-root emotion-8"
+        class="MuiBox-root emotion-7"
       >
-        <p
-          class="MuiTypography-root MuiTypography-body1 emotion-9"
-        />
+        <div
+          class="MuiBox-root emotion-8"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 emotion-9"
+          />
+        </div>
       </div>
     </div>
     <div

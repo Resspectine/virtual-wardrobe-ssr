@@ -26,11 +26,11 @@ const GarmentComponent: FC<GarmentProps> = ({
     <Box>
       {picture && <ImageSection image={picture} />}
       <DataSection description={description} title={title} />
-    </Box>
-    <Box display="flex" mx={-0.625} flexWrap="wrap" flex="1" alignItems="flex-start">
-      {tags?.map(tag => (
-        <TagItem tag={tag} key={tag.id} />
-      ))}
+      <Box display="flex" mx={-0.625} flexWrap="wrap" flex="1" alignItems="flex-start">
+        {tags?.map(tag => (
+          <TagItem tag={tag} key={tag.id} />
+        ))}
+      </Box>
     </Box>
     <PriceSection price={price} wearingAmount={wearingAmount} />
   </GarmentWrapper>

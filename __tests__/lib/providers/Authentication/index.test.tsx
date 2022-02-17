@@ -31,6 +31,6 @@ describe('Authentication', () => {
       </AuthenticationProvider>
     );
 
-    await waitFor(() => expect(push).toBeCalledTimes(1));
+    await waitFor(() => expect(push).toBeCalledTimes(2));
   });
 });

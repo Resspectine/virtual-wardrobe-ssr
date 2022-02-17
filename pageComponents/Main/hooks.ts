@@ -14,6 +14,7 @@ export const useMain = () => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const addNotification = useAppNotification(state => state.addNotification);
+  const deleteNotificationByKey = useAppNotification(state => state.deleteNotificationByKey);
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [activeGarmentId, setActiveGarmentId] = useState<string>('');
@@ -30,8 +31,14 @@ export const useMain = () => {
   };
 
   const { data: tagsData } = useQuery('tags', loadTags);
-  const { data: garmentsData } = useQuery(['garments', loadGarmentsQueryParams], () =>
-    loadGarments(loadGarmentsQueryParams)
+  const { data: garmentsData } = useQuery(
+    ['garments', loadGarmentsQueryParams],
+    () => loadGarments(loadGarmentsQueryParams),
+    {
+      onSuccess: () => {
+        deleteNotificationByKey('garment loading');
+      },
+    }
   );
 
   const { mutate: wearGarmentMutate } = useMutation<Response, Error, string, { previousGarments: Garment[] }>(
@@ -113,6 +120,7 @@ export const useMain = () => {
     addNotification({
       message: 'Loading garments',
       type: 'loading',
+      key: 'garment loading',
     });
 
     const preventDefault = (e: MouseEvent) => e.preventDefault();

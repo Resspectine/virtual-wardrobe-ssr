@@ -45,13 +45,12 @@ const variants: Record<
 export const AppNotificationMessageWrapper = styled(Box)<{ remove: boolean; type: NotificationType }>(
   ({ remove, type }) => ({
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     padding: '5px 10px',
     borderWidth: 1,
     borderStyle: 'solid',
     borderRadius: 6,
-    maxWidth: 350,
     animation: !remove ? 'enter 300ms cubic-bezier(0.15, 0.7, 0.71, 1.29)' : 'left 500ms linear',
     marginBottom: 10,
     '@keyframes enter': {

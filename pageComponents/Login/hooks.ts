@@ -1,20 +1,21 @@
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 
 import { login } from '@/lib/controller/authentication';
 import { LoginUser } from '@/lib/controller/authentication/types';
 import { ROUTE_PATHS } from '@/routes/constants';
 import { useAppNotification } from '@/store/appNotification';
-import { useUser } from '@/store/user';
+import { StoreUser, useUser } from '@/store/user';
 
 export type LoginValue = LoginUser;
 
 export const useLogin = () => {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const setUser = useUser(state => state.setUser);
   const addNotification = useAppNotification(state => state.addNotification);
-  const { mutate: loginMutate } = useMutation(login);
+  const { mutate: loginMutate } = useMutation<StoreUser, Error, LoginValue, unknown>(login);
 
   const {
     control,
@@ -28,16 +29,17 @@ export const useLogin = () => {
 
   const onSubmit = handleSubmit(values => {
     loginMutate(values, {
-      onSuccess: user => {
+      onSuccess: async user => {
+        await queryClient.invalidateQueries('authentication');
         setUser(user);
 
         addNotification({ message: 'Login success', type: 'success' });
 
         router.push(ROUTE_PATHS.main);
       },
-      onError: () => {
+      onError: error => {
         addNotification({
-          message: 'Error ocurred, try again please',
+          message: error.message,
           type: 'error',
         });
 
